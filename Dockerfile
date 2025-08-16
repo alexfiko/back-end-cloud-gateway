@@ -18,7 +18,7 @@ ENV JAVA_OPTS="-Xmx512m -Xms256m"
 COPY . .
 
 # 🔨 Compilar el proyecto
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package 
 
 # Usamos una imagen de Openjdk
 # Exponemos el puerto que nuestro componente va a usar para escuchar peticiones
