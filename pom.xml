@@ -8,27 +8,30 @@
 		<relativePath />
 	</parent>
 	<groupId>com.unir</groupId>
-	<artifactId>gateway</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>gateway</name>
-	<description>Gateway o Proxy Inverso</description>
+	<artifactId>api-gateway</artifactId>
+	<version>1.0.0</version>
+	<name>api-gateway</name>
+	<description>API Gateway para enrutar servicios del hospital</description>
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2024.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+	    <!-- 📊 Actuator para métricas y endpoints de salud -->
+	    <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
+		 <!-- 🚦 Spring Cloud Gateway (reactivo) -->
+	    <dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-gateway</artifactId>
+	    </dependency>
+   		 <!-- 📡 Eureka Client -->
+	    <dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	    </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -36,10 +39,16 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		<!-- 🧪 Test -->
+    	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+	    <!-- 🧭 Actuator endpoints para Gateway -->
+		<dependency>
+		  <groupId>org.springframework.cloud</groupId>
+		  <artifactId>spring-cloud-gateway-mvc</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
