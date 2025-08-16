@@ -17,17 +17,17 @@
 		<spring-cloud.version>2024.0.1</spring-cloud.version>
 	</properties>
 	<dependencies>
-	    <!-- 📊 Actuator para métricas y endpoints de salud -->
+	    <!--  Actuator para métricas y endpoints de salud -->
 	    <dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-actuator</artifactId>
 	    </dependency>
-		 <!-- 🚦 Spring Cloud Gateway (reactivo) -->
+		 <!--  Spring Cloud Gateway (reactivo) -->
 	    <dependency>
 	      <groupId>org.springframework.cloud</groupId>
 	      <artifactId>spring-cloud-starter-gateway</artifactId>
 	    </dependency>
-   		 <!-- 📡 Eureka Client -->
+   		 <!--  Eureka Client -->
 	    <dependency>
 	      <groupId>org.springframework.cloud</groupId>
 	      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -39,7 +39,7 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<!-- 🧪 Test -->
+		<!--  Test -->
     	<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
