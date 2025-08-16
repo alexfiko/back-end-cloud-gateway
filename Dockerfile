@@ -16,5 +16,5 @@ RUN mvn clean package
 # Marcamos el punto de arranque de la imagen con el comando "java -jar app.jar" que ejecutará nuestro componente.
 FROM openjdk:21
 EXPOSE 8080
-COPY --from=build /target/gateway-1.0.0.jar app.jar
+COPY --from=build /target/api-gateway.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
