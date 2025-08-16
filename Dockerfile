@@ -14,9 +14,6 @@ ENV APP_VERSION=1.0.0
 ENV JAVA_OPTS="-Xmx512m -Xms256m"
 
 
-# Dar permisos de ejecución al wrapper
-RUN chmod +x mvnw
-
 # 📦 Descargar dependencias
 RUN ./mvnw dependency:go-offline -B
 
