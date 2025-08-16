@@ -18,7 +18,7 @@ eureka:
 ## lower-case-service-id is mandatory, otherwise is retrieved in upper case from Eureka
 spring:
   application:
-    name: gateway    
+    name: api-gateway    
   cloud:
     gateway:
       discovery:
