@@ -8,13 +8,29 @@
 # Ejecutamos el comando mvn clean package (Generara un archivo JAR para el despliegue)
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 
+# 🌱 Variables de entorno
+ENV APP_NAME=api-gateway
+ENV APP_VERSION=1.0.0
+ENV JAVA_OPTS="-Xmx512m -Xms256m"
+
+# 📁 Directorio de trabajo
+WORKDIR /app
+
+# ⚙️ Copiar archivos necesarios
+COPY pom.xml ./
+COPY mvnw ./
+COPY .mvn/ .mvn/
 
 # Dar permisos de ejecución al wrapper
 RUN chmod +x mvnw
 
 # 📦 Descargar dependencias
 RUN ./mvnw dependency:go-offline -B
-COPY . .
+
+# 👩‍💻 Copiar el código fuente
+COPY src ./src
+
+# 🔨 Compilar el proyecto
 RUN ./mvnw clean package -DskipTests
 
 # Usamos una imagen de Openjdk
