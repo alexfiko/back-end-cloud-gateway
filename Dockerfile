@@ -8,10 +8,7 @@
 # Ejecutamos el comando mvn clean package (Generara un archivo JAR para el despliegue)
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# ⚙️ Copiar archivos necesarios
-COPY pom.xml ./
-COPY mvnw ./
-COPY .mvn/ .mvn/
+
 # Dar permisos de ejecución al wrapper
 RUN chmod +x mvnw
 
