@@ -45,12 +45,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	    <!-- 🧭 Actuator endpoints para Gateway -->
-		<dependency>
-		  <groupId>org.springframework.cloud</groupId>
-		  <artifactId>spring-cloud-gateway-mvc</artifactId>
-		</dependency>
-	</dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
