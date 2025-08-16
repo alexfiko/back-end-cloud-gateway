@@ -15,13 +15,13 @@ ENV JAVA_OPTS="-Xmx512m -Xms256m"
 
 
 # 📦 Descargar dependencias
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # 👩‍💻 Copiar el código fuente
-COPY src ./src
+COPY . .
 
 # 🔨 Compilar el proyecto
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Usamos una imagen de Openjdk
 # Exponemos el puerto que nuestro componente va a usar para escuchar peticiones
