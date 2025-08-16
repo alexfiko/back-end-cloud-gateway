@@ -14,12 +14,6 @@ ENV APP_VERSION=1.0.0
 ENV JAVA_OPTS="-Xmx512m -Xms256m"
 
 
-
-# ⚙️ Copiar archivos necesarios
-COPY pom.xml ./
-COPY mvnw ./
-COPY .mvn/ .mvn/
-
 # Dar permisos de ejecución al wrapper
 RUN chmod +x mvnw
 
