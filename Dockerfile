@@ -38,6 +38,7 @@ RUN ./mvnw clean package -DskipTests
 # Copiamos desde "build" el JAR generado (la ruta de generacion es la misma que veriamos en local) y lo movemos y renombramos en destino como 
 # Marcamos el punto de arranque de la imagen con el comando "java -jar app.jar" que ejecutará nuestro componente.
 FROM openjdk:21
+WORKDIR /app
 EXPOSE 8080
-COPY --from=build /target/api-gateway-1.0.0.jar app.jar
+COPY --from=build /app/target/api-gateway-1.0.0.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
