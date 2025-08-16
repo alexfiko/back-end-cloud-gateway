@@ -7,13 +7,6 @@
 # Copiamos todo el contenido del repositorio
 # Ejecutamos el comando mvn clean package (Generara un archivo JAR para el despliegue)
 FROM maven:3.9.6-eclipse-temurin-21 AS build
-
-# 🌱 Variables de entorno
-ENV APP_NAME=api-gateway
-ENV APP_VERSION=1.0.0
-ENV JAVA_OPTS="-Xmx512m -Xms256m"
-
-
 # 👩‍💻 Copiar el código fuente
 COPY . .
 
